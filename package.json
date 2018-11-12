@@ -6,7 +6,13 @@
   "scripts": {
     "start": "electron .",
     "pretest": "eslint src/*.js src/lib",
-    "test": "jasmine"
+    "test": "jasmine",
+
+    "clean": "rm -rf dist",
+
+    "pack": "npm run clean && npm run pack:win",
+    "pack:osx": "",
+    "pack:win": "./node_modules/.bin/electron-packager . VoTT --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/public/images/icon.ico --prune=true --out=dist/win --version-string.CompanyName=Microsoft --version-string.ProductName=\"Visual Object Tagging Tool\""
   },
   "repository": "https://github.com/CatalystCode/VOTT",
   "keywords": [
