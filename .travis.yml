@@ -9,3 +9,11 @@ before_script:
   - npm install
 script:
   - npm test
+before_deploy:
+  - npm run pack
+deploy:
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    on:
+      tags: true
