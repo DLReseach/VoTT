@@ -15,5 +15,18 @@ deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
     skip_cleanup: true
+    file: dist/osx/VoTT-darwin-x64.zip
+    on:
+      tags: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    file: dist/win/VoTT-win32-x64.zip
+    on:
+      tags: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    file: dist/linux/VoTT-linux-x64.zip
     on:
       tags: true
